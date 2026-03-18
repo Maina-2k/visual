@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="src/output.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+  <title>IST</title>
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <nav class="relative bg-red-700">
+    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+      <div class="relative flex h-16 items-center justify-between">
+
+        <!-- Mobile menu button -->
+        <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+          <button type="button" command="--toggle" commandfor="mobile-menu"
+            class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline-2 focus:outline-offset-1 focus:outline-indigo-500">
+            <span class="sr-only">Open main menu</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-6 w-6">
+              <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Logo + Menu -->
+        <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+          <div class="flex shrink-0 items-center">
+            <img src="src/images/cropped-IST-logo-01-2048x2048-1-2.png" alt="IST Logo" class="h-8 w-auto">
+          </div>
+          <div class="hidden sm:ml-6 sm:block">
+            <div class="flex space-x-4">
+              <a href="#home" class="rounded-md bg-gray-950/50 px-3 py-2 text-sm font-medium text-white">Home</a>
+              <a href="#"
+                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">About
+                IST</a>
+              <a href="#"
+                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Courses</a>
+              <a href="#"
+                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Career
+                Opportunities</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Profile / Notifications -->
+        <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+          <button type="button"
+            class="relative rounded-full p-1 text-gray-400 hover:text-white focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500">
+            <span class="sr-only">View notifications</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-6 w-6">
+              <path
+                d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+
+          <!-- Profile dropdown -->
+          <el-dropdown class="relative ml-3">
+            <button
+              class="relative flex rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+              <span class="sr-only">Open user menu</span>
+              <img
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                alt="" class="h-8 w-8 rounded-full bg-gray-800">
+            </button>
+
+            <el-menu anchor="bottom end" popover
+              class="w-48 origin-top-right rounded-md bg-gray-800 py-1 text-gray-300">
+              <a href="#" class="block px-4 py-2 text-sm hover:bg-white/5">Your profile</a>
+              <a href="#" class="block px-4 py-2 text-sm hover:bg-white/5">Settings</a>
+              <a href="#" class="block px-4 py-2 text-sm hover:bg-white/5">Sign out</a>
+            </el-menu>
+          </el-dropdown>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <el-disclosure id="mobile-menu" hidden class="block sm:hidden">
+      <div class="space-y-1 px-2 pt-2 pb-3">
+        <a href="#home" class="block rounded-md bg-gray-950/50 px-3 py-2 text-base font-medium text-white">Dashboard</a>
+        <a href="#"
+          class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Team</a>
+        <a href="#"
+          class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Projects</a>
+        <a href="#"
+          class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Calendar</a>
+      </div>
+    </el-disclosure>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home"
+    class="bg-gradient from-cyan-200 to-blue-100 w-full h-screen flex flex-col items-center justify-center">
+    <h1 class="text-2xl font-bold text-gray-900 text-center text-blue-400 mb-1">
+      WELCOME TO INSTITUTE OF SOFTWARE TECHNOLOGIES
+    </h1>
+
+    <div class="flex flex-wrap gap-4 justify-center">
+
+      <!--  SOFTWARE DEVELOPMENT -->
+      <div class="flex-auto bg-white border border-l-red-500 rounded-lg p-5 m-4 max-w-sm">
+        <img src="src/images/image.png" class="h-48 w-full object-cover rounded-lg shadow-md shadow-indigo-600">
+        <h2 class="font-bold text-gray-900 mt-2">Software Development</h2>
+        <p class="text-md leading-relaxed">We offer professional courses on Software Development</p>
+      </div>
+      <!--  CYBER SECURITY -->
+      <div class="flex-auto bg-white border border-l-red-500 rounded-lg p-5 m-4 max-w-sm">
+        <img src="src/images/cyber.png"
+          class="h-48 w-full object-cover rounded-lg shadow-md shadow-indigo-600">
+        <h2 class="font-bold text-gray-900 mt-2">Cyber Security</h2>
+        <p class="text-md leading-relaxed">We offer professional courses on Cyber Security</p>
+      </div>
+      <!--  3D PRINTING -->
+      <div class="flex-auto bg-white border border-l-red-500 rounded-lg p-5 m-4 max-w-sm">
+        <img src="src/images/3D.png"
+          class="h-48 w-full object-cover rounded-lg shadow-md shadow-indigo-600">
+        <h2 class="font-bold text-gray-900 mt-2">3D Printing</h2>
+        <p class="text-md leading-relaxed">We offer professional courses on 3D Printing</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section id="blog" class="py-10">
+    <h2 class="font-bold text-2xl text-center mb-6">Campus Blogs</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-6">
+
+      <!-- Blog Card 1 -->
+      <div class="p-6 bg-white shadow-sm rounded-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5"
+          stroke="current-color" class="absolute right-4 top-4 size-4">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.345l5.518.442c.499.04.701.663.321.988l-4.204">
+          </path>
+        </svg>
+
+        <h2 class="text-xl font-semibold text-slate-800">How to Master Tailwind CSS</h2>
+        <p class="mt-2">Learn how to efficiently use Tailwind CSS to create stunning designs with minimal effort...</p>
+        <a href="#" class="inline-block mt-3 text-blue-500 font-medium">Read more</a>
+        <div class="mt-2 text-xs text-gray-500">Most read article of the month</div>
+      </div>
+      <!-- Blog Card 2-->
+      <div class="p-6 bg-white shadow-sm rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900">How to Master Tailwind CSS</h2>
+        <p class="mt-2 text-gray-700">Learn how to efficiently use Tailwind CSS to create stunning designs with minimal
+          effort...</p>
+        <a href="#" class="inline-block mt-3 text-blue-500 font-medium">Read more</a>
+      </div>
+      <!-- Blog Card 3 -->
+      <div class="p-6 bg-white shadow-sm rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900">Top Tips for Responsive Design</h2>
+        <p class="mt-2 text-gray-700">Responsive design is crucial in modern web development. Discover practical tips to
+          improve your designs...</p>
+        <a href="#" class="text-blue-500 font-medium">Read more</a>
+      </div>
+      <!-- Blog Card 4 -->
+      <div class="p-6 bg-white shadow-sm rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900">Understanding Utility-First CSS</h2>
+        <p class="mt-2 text-gray-700">Dive into the utility-first CSS approach and see how it can simplify your
+          workflow...</p>
+        <a href="#" class="text-blue-500 font-medium">Read more</a>
+      </div>
+      <!-- Blog Card 5 -->
+      <div class="p-6 bg-white shadow-sm rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900">Beginner's Guide to Web Accessibility</h2>
+        <p class="mt-2 text-gray-700">Ensure your website is accessible to everyone with this guide...</p>
+        <a href="#" class="text-blue-500 font-medium">Read more</a>
+      </div>
+
+      <!--Blog Post 6-->
+
+      <div class="p-6 bg-white shadow-sm rounded-lg space-y-2">
+        <h2 class="text-xl font-semibold text-slate-800">10 Must-Know HTML Tips</h2>
+        <p>Boost your productivity with these 10 essential HTML tips for developers...</p>
+        <a href="#" class="text-blue-500 font-medium">Read more</a>
+      </div>
+
+    </div>
+
+    <a href="#"
+      class="fixed bottom-4 right-4 bg-sky-600 text-white text-sm font-medium px-6 py-2 rounded-xl shadow-xl shadow-sky-200">
+      Follow us on LinkedIn
+    </a>
+  </section>
+
+</body>
+
+</html>
