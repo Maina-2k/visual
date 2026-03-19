@@ -31,31 +31,25 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node.Js
-        # https://github.com/ruby/setup-ruby/releases/tag/v1.207.0
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          
-      - name: Install dependencies
-        run: npm install
-        
-      - name: Build Tailwind CSS
-        run: npx tailwind -i ./src/input.css -o ./src/ouput.css
-        
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v5
-      - name: Build with Jekyll
-        # Outputs to the './_site' directory by default
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
-        env:
-          JEKYLL_ENV: production
-      - name: Upload artifact
-        # Automatically uploads an artifact from the './_site' directory by default
-        uses: actions/upload-pages-artifact@v3
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+          node-version: 18
+    - name: Install Tailwind CSS
+      run: npm install -D tailwindcss
+    - name: Build Tailwind CSS
+      run: npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css
+    - name: Setup Pages
+      uses: actions/configure-pages@v5
+    - name: Build with Jekyll
+      uses: actions/jekyll-build-pages@v1
+      with:
+          source: ./
+          destination: ./_site
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
 
   # Deployment job
   deploy:
