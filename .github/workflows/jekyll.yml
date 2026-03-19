@@ -43,7 +43,7 @@ jobs:
         run: npm install
         
       - name: Build Tailwind CSS
-        run: npm run build:css
+        run: npx tailwind -i ./src/input.css -o ./src/ouput.css
         
       - name: Setup Pages
         id: pages
