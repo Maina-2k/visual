@@ -39,11 +39,11 @@ jobs:
         with:
           node-version: '18'
           
-      - name: Install Tailwind CSS
-        run: npm install -D tailwindcss
+      - name: Install dependencies
+        run: npm install
         
       - name: Build Tailwind CSS
-        run: npx tailwindcss/cli -i ./src/input.css -o ./src/output.css
+        run: npx tailwindcss -i ./src/input.css -o ./src/output.css
         
       - name: Setup Pages
         id: pages
